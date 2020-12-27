@@ -109,13 +109,13 @@ function draw(){
 
   fill("red");
   //Moving left
-  if(touches.length === 2){
+  if(touches.length === 2&&playerVertical=="down"){
       Body.setVelocity(playerBody.body, {x:-10, y:0});
       Body.applyForce(playerBody.body, playerBody.body.position, {x:0, y:-100});
       touches = [];
     }
   //Moving right
-  if(touches.length === 1){
+  if(touches.length === 1&&playerVertical=="down"){
       Body.setVelocity(playerBody.body, {x:10, y:0});
       Body.applyForce(playerBody.body, playerBody.body.position, {x:0, y:-100});
       touches = [];
@@ -123,10 +123,6 @@ function draw(){
 
   if(touches.length = 0){
     Body.setVelocity(playerBody.body, {x:0, y:0});
-  }
-
-  if(touches.length > 0){
-    background(255,255,0);
   }
 
   textSize(15);
